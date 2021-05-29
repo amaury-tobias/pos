@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "extends": [
+    "@attq/eslint-config-vue",
+    "@attq/eslint-config-prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off"
+  }
+}

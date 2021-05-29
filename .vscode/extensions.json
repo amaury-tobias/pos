@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "lokalise.i18n-ally",
+    "antfu.iconify",
+    "dbaeumer.vscode-eslint",
+    "csstools.postcss",
+    "stylelint.vscode-stylelint",
+    "johnsoncodehk.volar"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "pos",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "description": "",
+  "main": "app/index.cjs",
+  "author": {
+    "name": "Isidro Amaury Tobias Quiroz",
+    "email": "amaury.tobiasqr@gmail.com",
+    "url": "https://amaurytq.dev"
+  },
+  "engines": {
+    "node": ">=15.8.0",
+    "npm": ">=7.5",
+    "yarn": "1.22.10"
+  },
+  "scripts": {
+    "lint:script": "eslint --ext .ts,.vue,.js,.tsx .",
+    "dev": "node scripts/watch.mjs",
+    "build": "node scripts/build.mjs",
+    "prebuild": "electron-icon-builder --input=./icon.png --output=dist --flatten",
+    "release": "electron-builder build --config ./scripts/config/base.js",
+    "prerelease": "yarn build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9",
+    "vue": "^3.0.11",
+    "vue-i18n": "^9.1.6",
+    "vue-router": "^4.0.8",
+    "vue-toastification": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@attq/eslint-config-prettier": "^0.1.0",
+    "@attq/eslint-config-vue": "^0.1.2",
+    "@iconify/json": "^1.1.350",
+    "@intlify/vite-plugin-vue-i18n": "^2.1.2",
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/compiler-sfc": "^3.0.11",
+    "electron": "^13.0.1",
+    "electron-builder": "^22.10.5",
+    "electron-icon-builder": "^2.0.1",
+    "eslint": "^7.27.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.3.4",
+    "vite-plugin-components": "^0.10.4",
+    "vite-plugin-icons": "^0.6.0",
+    "vite-plugin-windicss": "^0.16.7"
+  },
+  "external": [
+    "electron-updater"
+  ]
+}
