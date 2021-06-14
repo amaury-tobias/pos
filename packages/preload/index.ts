@@ -7,12 +7,18 @@ const ipcRendererWrapper = (event: string, listener: IpcRenderedListener) => {
   return () => ipcRenderer.off(event, listener)
 }
 
+const ipcRenderedListeners = {
+  onFocus: (listener: IpcRenderedListener) => ipcRendererWrapper('focus', listener),
+  onBlur: (listener: IpcRenderedListener) => ipcRendererWrapper('blur', listener),
+}
+
 const api = {
   shell,
   clipboard,
   ipcRenderer: {
     callService: (service: string, functionName: string, ...payload: any[]) =>
       ipcRenderer.invoke('service:call', service, functionName, ...payload),
+    ...ipcRenderedListeners,
   },
   dialog: {},
 }

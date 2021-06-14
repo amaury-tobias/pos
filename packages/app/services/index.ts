@@ -1,15 +1,18 @@
-import { ipcMain } from 'electron'
+import { ipcMain, IpcMainInvokeEvent } from 'electron'
 import { WindowService } from '@app/services/WindowService'
+import { StoreService } from '@app/services/StoreService'
 
 export interface Services {
   WindowService: WindowService
+  StoreService: StoreService
 }
 
 let _services!: Services
 
-export function initServices() {
+export function createServicesHandler() {
   _init({
     WindowService: new WindowService(),
+    StoreService: new StoreService(),
   })
 }
 

@@ -1,18 +1,12 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.validate": [
-    "vue",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["vue", "javascript", "javascriptreact", "typescript", "typescriptreact"],
   "files.associations": {
     "*.css": "postcss"
   },
   "volar.tsPlugin": true,
   "css.validate": false,
-  "windicss.colorDecoratorsType": "cube",
+  "windicss.colorDecoratorsType": "bg",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -20,5 +14,5 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "node_modules": true
-  },
+  }
 }

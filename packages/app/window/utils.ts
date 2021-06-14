@@ -8,7 +8,10 @@ export const options: BrowserWindowConstructorOptions = {
   height: 650,
   frame: false,
   titleBarStyle: 'hiddenInset',
+  backgroundColor: '#111827',
+  show: false,
   transparent: true,
+  center: true,
   webPreferences: {
     contextIsolation: true,
     preload: join(dirname(fileURLToPath(import.meta.url)), '../preload/index.cjs'),

@@ -3,7 +3,7 @@ import { fileURLToPath, pathToFileURL } from 'url'
 import { app } from 'electron'
 
 import { MainWindow } from '@app/window'
-import { initServices } from '@app/services'
+import { createServicesHandler } from '@app/services'
 
 global.__windowURLs = new Proxy(
   {},
@@ -28,6 +28,7 @@ let mainWindow: MainWindow | null
 
 function init() {
   mainWindow = new MainWindow()
+  createServicesHandler()
 
   const mainWindowOpen = () => {
     mainWindow?.open()
@@ -37,6 +38,5 @@ function init() {
 }
 
 app.whenReady().then(() => {
-  initServices()
   init()
 })

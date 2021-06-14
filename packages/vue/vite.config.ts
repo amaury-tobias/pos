@@ -44,6 +44,7 @@ export default defineConfig({
     ViteIcons(),
     ViteComponents({
       globalComponentsDeclaration: true,
+      directoryAsNamespace: true,
       dirs: 'components',
       customComponentResolvers: [
         ViteIconsResolver({

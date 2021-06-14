@@ -5,7 +5,7 @@ export default defineConfig({
   darkMode: 'class',
   attributify: true,
   extract: {
-    include: ['**/*.{vue,tsx,css}'],
+    include: ['./**/*.{vue,tsx,css}'],
   },
   plugins: [aspect],
 })

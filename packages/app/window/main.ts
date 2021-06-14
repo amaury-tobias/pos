@@ -2,7 +2,7 @@ import { BrowserWindow, BrowserWindowConstructorOptions } from 'electron'
 import { EventCallback, WinSuscribe, options } from '@app/window/utils'
 
 export class MainWindow extends WinSuscribe {
-  static events: Record<string, Array<EventCallback>>
+  static events: Record<string, Array<EventCallback>> = {}
   #win: BrowserWindow | null = null
   #url = __windowURLs.index
   #opts: BrowserWindowConstructorOptions
@@ -20,7 +20,10 @@ export class MainWindow extends WinSuscribe {
     })
     this.#win.setContentProtection(true)
     this.#win.loadURL(this.#url)
-    this.#win.center()
+
+    this.#win.on('focus', () => this.#win?.webContents.send('focus'))
+    this.#win.on('blur', () => this.#win?.webContents.send('blur'))
+    this.#win.once('ready-to-show', () => this.#win?.show())
   }
 
   close() {
